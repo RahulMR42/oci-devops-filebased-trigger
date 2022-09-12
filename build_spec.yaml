@@ -28,7 +28,7 @@ steps:
     command: |
       echo "Running a build run based on file trigger"
       echo ".......The files changed are ........"
-      git diff --name-only --staged.
+      git diff --name-only --staged
     onFailure:
       - type: Command
         command: |
