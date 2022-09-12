@@ -23,13 +23,14 @@ env:
 
 steps:
   - type: Command
-    name: "Define unique image tag"
+    name: "Sample steps"
     timeoutInSeconds: 40
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
       echo "Running a build run based on file trigger"
       echo ".......The files changed are ........"
-      git diff --name-only --staged
+      git show --stat --oneline HEAD
+
     onFailure:
       - type: Command
         command: |
